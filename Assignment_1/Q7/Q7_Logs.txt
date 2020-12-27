@@ -1,0 +1,8 @@
+% Question 7a is in Circuit.pl
+% Prolog Logs for Question 7b
+
+?- [circuit].
+true.
+
+?- circuit(0, 1, 0, 1, X).
+X = 5 .
