@@ -1,0 +1,19 @@
+?- course_list(raisa,ben,justin,jeremy,Raisa,Ben,Justin,Jeremy).
+Ben = [comp348, engr371, phys284, encs282],
+Jeremy = [comp348,comp352,encs282,engr202],
+Justin = [comp348, comp479, math354, actu458],
+Raisa = [comp348, comp352, phys284, encs282]
+
+?- team_size(Team_Size).
+Team_Size = 4
+
+?- combined_list(Unique_List).
+Unique_List = [comp348, comp352, phys284, encs282, engr371, comp479, math354, actu458, engr202]
+
+?- sort([comp348, comp352, phys284, encs282, engr371, comp479, math354, actu458, engr202], Sorted).
+Sorted = [actu458, comp348, comp352, comp479, encs282, engr202, engr371, math354, phys284]
+
+?- [actu458, comp348, comp352, comp479, encs282, engr202, engr371, math354, phys284] = [A,B|C].
+A = actu458,
+B = comp348,
+C = [comp352, comp479, encs282, engr202, engr371, math354, phys284]
