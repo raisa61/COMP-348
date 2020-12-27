@@ -1,0 +1,31 @@
+?- [transitions].
+true.
+
+?- transition(1,a,2), transition(2,a,2), transition(2,b,1).
+true 
+
+?- trace.
+true.
+
+[trace]  ?- acceptance([a,a,b]).
+   Call: (10) acceptance([a, a, b]) ? creep
+   Call: (11) start(_17004) ? creep
+   Exit: (11) start(1) ? creep
+   Call: (11) nextTransition(1, [a, a, b]) ? creep
+   Call: (12) transition(1, a, _17140) ? creep
+   Exit: (12) transition(1, a, 2) ? creep
+   Call: (12) nextTransition(2, [a, b]) ? creep
+   Call: (13) transition(2, a, _17272) ? creep
+   Exit: (13) transition(2, a, 2) ? creep
+   Call: (13) nextTransition(2, [b]) ? creep
+   Call: (14) transition(2, b, _17404) ? creep
+   Exit: (14) transition(2, b, 1) ? creep
+   Call: (14) nextTransition(1, []) ? creep
+   Call: (15) final(1) ? creep
+   Exit: (15) final(1) ? creep
+   Exit: (14) nextTransition(1, []) ? creep
+   Exit: (13) nextTransition(2, [b]) ? creep
+   Exit: (12) nextTransition(2, [a, b]) ? creep
+   Exit: (11) nextTransition(1, [a, a, b]) ? creep
+   Exit: (10) acceptance([a, a, b]) ? creep
+true.
