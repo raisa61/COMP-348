@@ -1,0 +1,16 @@
+(defun split-up-to (list to)
+    (cond
+     ((<= to 0) ())
+     ((null list) list)
+     (t (cons (car list) (split-up-to (cdr list) (1- to))))
+     )
+    )
+(defun sub-list (list from to)
+    (cond
+     ((<= from 1) (split-up-to list to))
+     ((null list) list)
+     (t (sub-list (cdr list) (1- from) (1- to)))
+     )
+    )
+(print(sub-list '(1 6 12) 2 3))
+(print(sub-list '(1 6 12) 4 2))
